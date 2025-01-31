@@ -25,7 +25,8 @@ namespace UI
         private void SendMessage()
         {
             _room.SendChatMessage(inputField.text);
-           // OnMessageReceived(inputField.text);
+            if(_room is RoomServer)
+                OnMessageReceived(inputField.text);
             inputField.text = string.Empty;
         }
 
